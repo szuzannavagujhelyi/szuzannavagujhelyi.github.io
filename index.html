@@ -59,7 +59,7 @@ nav.main a:hover{color:var(--gold2)}
 .btn.o{background:transparent;color:var(--gold2)}
 .btn.o:hover{background:var(--gold);color:var(--ink)}
 .portrait{position:relative;max-width:400px;justify-self:end;width:100%}
-.portrait::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid var(--gold);opacity:.6}
+.portrait::before{content:"";position:absolute;inset:-14px;border:1px solid var(--gold);opacity:.7;pointer-events:none}
 .portrait img{position:relative;width:100%;aspect-ratio:396/521;object-fit:cover;filter:saturate(.95) contrast(1.02);box-shadow:0 30px 70px rgba(0,0,0,.55)}
 
 /* quote */
@@ -120,6 +120,7 @@ footer{padding:36px 0;text-align:center;font-size:13px;color:#8f8070;border-top:
 @media(max-width:480px){
   .wrap{padding:0 18px}
   .brand{font-size:16px;white-space:nowrap}
+  .portrait{width:calc(100% - 40px)}
   .langs{margin-left:6px}
   .langs button{padding:6px 5px;letter-spacing:.08em}
   .btn{width:100%;text-align:center;margin-right:0}
