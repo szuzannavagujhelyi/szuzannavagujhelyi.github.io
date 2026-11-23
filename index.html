@@ -119,8 +119,9 @@ footer{padding:36px 0;text-align:center;font-size:13px;color:#8f8070;border-top:
 }
 @media(max-width:480px){
   .wrap{padding:0 18px}
-  .brand{font-size:19px}
-  .langs{margin-left:8px}
+  .brand{font-size:16px;white-space:nowrap}
+  .langs{margin-left:6px}
+  .langs button{padding:6px 5px;letter-spacing:.08em}
   .btn{width:100%;text-align:center;margin-right:0}
   .ch{min-width:0;width:100%}
   .ch a{font-size:20px;word-break:break-word}
@@ -143,6 +144,7 @@ footer{padding:36px 0;text-align:center;font-size:13px;color:#8f8070;border-top:
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="sv" aria-pressed="false">SV</button>
         <button type="button" data-lang="hu" aria-pressed="false">HU</button>
+        <button type="button" data-lang="sr" aria-pressed="false">SR</button>
       </div>
     </div>
   </div>
@@ -297,6 +299,26 @@ b3_t:"Cricket's Songbook – notsamling",b3_d:"Alla stycken från den första vo
 fmt:"Digital utgåva · PDF",order:"Beställ",sample:"Gratis provsidor",orderSubj:"Beställning: ",
 c_eye:"Kontakt",c_h:"Hör av dig",c_p:"Är du intresserad av min metod eller vill du beställa någon av utgåvorna? Hör av dig på det sätt som passar dig bäst.",c_mail:"E-post",
 rights:"Alla rättigheter förbehållna.",title:"Szuzanna Vágujhelyi – Violinist",portrait:"Szuzanna Vágujhelyi med sin fiol"},
+sr:{name:"Szuzanna Vágujhelyi",h1:"Szuzanna<br><em>Vágujhelyi</em>",nav_about:"O meni",nav_method:"Metoda",nav_books:"Izdanja",nav_contact:"Kontakt",
+eyebrow:"Violinistkinja · Profesorka violine · Autorka",
+lead:"Profesionalna violinistkinja i profesorka violine sa više od četrnaest godina pedagoškog iskustva, autorka metode The Cricket's Violin Method.",
+btn_method:"Upoznajte metodu",btn_yt:"Pogledajte na YouTube-u",
+quote:"„Muziciranje treba da bude slobodno, prirodno i bez napetosti – za svakoga.”",
+about_eye:"O meni",about_h:"Život sa violinom",f1:"Godina predavanja",f2:"Sopstvena metoda podučavanja",f3:"Izdanja u prvom tomu",
+a1:"Kao profesionalna violinistkinja sa više od četrnaest godina predavanja iza sebe, oduvek sam se vodila muzičkim integritetom, dubinom rada i uverenjem da muziciranje treba da bude slobodno, prirodno i bez napetosti – za svakoga.",
+a2:"Godine 2026. suštinu tog iskustva sabrala sam u prvi tom, osmišljen da od samih prvih koraka postavi zdrave i čvrste temelje violinske tehnike. Svaka lekcija, svako načelo i svaka vežba u njemu potvrdili su se u svakodnevnom radu i postali su mi pouzdan saputnik.",
+a3:"Metodske knjige koje prenose zaista živo znanje su retke, i drago mi je što ovu mogu da ponudim u tom duhu. Znanje opstaje samo kada se prenosi dalje; u suprotnom ostaje samo misao. Oslonila sam se na mudrost nekoliko pedagoških tradicija i obogatila ih mnoštvom sopstvenih ideja.",
+m_eye:"Metoda",m_vol:"Prvi tom · 2026",
+m1:"Iz te sinteze nastala je The Cricket's Violin Method (Tücsök-módszer): promišljen pristup usmeren na dete, koji se razvija u prvoj knjizi.",
+m2:"Uz metodsku knjigu idu još dva prateća izdanja. Radna sveska prenosi iste zadatke na jezik deteta, pa je vežbanje kod kuće lakše i radosnije. Posebna zbirka nota sadrži isključivo kompozicije iz prvog toma, kako bi sve bilo pri ruci.",
+m3:"Ovo je tek prvi korak. U drugom tomu čeka još mnogo ideja, lekcija i vežbi.",
+b_eye:"Izdanja",b_h:"Knjige i izdanja",
+b1_t:"Metodika nastave violine",b1_d:"Priručnik za nastavnike: držanje tela, držanje gudala, leva ruka i formiranje tona, korak po korak od prvog časa.",
+b2_t:"Cricket's Practice Book – radna sveska",b2_d:"Isti zadaci na jeziku deteta: razigrane stranice koje vežbanje kod kuće čine lakšim i radosnijim.",
+b3_t:"Cricket's Songbook – zbirka nota",b3_d:"Sve kompozicije iz prvog toma u jednoj zbirci, za violinu i sa klavirskom pratnjom.",
+fmt:"Digitalno izdanje · PDF",order:"Naručite",sample:"Besplatne probne stranice",orderSubj:"Porudžbina: ",
+c_eye:"Kontakt",c_h:"Javite mi se",c_p:"Ako vas zanima moja metoda ili želite da naručite neko od izdanja, javite mi se na način koji vam najviše odgovara.",c_mail:"E-pošta",
+rights:"Sva prava zadržana.",title:"Szuzanna Vágujhelyi – violinistkinja",portrait:"Szuzanna Vágujhelyi sa violinom"},
 hu:{name:"Vágujhelyi Szuzanna",h1:"Vágujhelyi<br><em>Szuzanna</em>",nav_about:"Rólam",nav_method:"A módszer",nav_books:"Kiadványok",nav_contact:"Kapcsolat",
 eyebrow:"Hegedűművész · Tanár · Szerző",
 lead:"Hegedűművész és hegedűtanár, több mint tizennégy év tanítási tapasztalattal, a Tücsök-módszer szerzője.",
@@ -320,7 +342,7 @@ rights:"Minden jog fenntartva.",title:"Vágujhelyi Szuzanna – hegedűművész"
 };
 var SAMPLES={en:{method:"samples/Methodology-Sample-EN.pdf",workbook:"samples/Workbook-Sample-EN.pdf",songbook:"samples/Songbook-Sample-EN.pdf"},
 hu:{method:"samples/Modszertan-Bemutato-HU.pdf",workbook:"samples/Munkafuzet-Bemutato-HU.pdf",songbook:"samples/Kottatar-Bemutato-HU.pdf"}};
-SAMPLES.sv=SAMPLES.en;
+SAMPLES.sv=SAMPLES.en;SAMPLES.sr=SAMPLES.en;
 var _E=[112,114,102,49,111,108,100,112,106,67,55,60,100,113,113,100,125,120,125,118];
 function em(){return _E.slice().reverse().map(function(c){return String.fromCharCode(c-3);}).join("");}
 function setLang(l){
@@ -339,7 +361,7 @@ function setLang(l){
 function detect(){
   try{var s=localStorage.getItem("lang");if(s&&T[s])return s;}catch(e){}
   var ls=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||"en"];
-  for(var i=0;i<ls.length;i++){var c=String(ls[i]).toLowerCase().slice(0,2);if(c==="sv"||c==="hu"||c==="en")return c;}
+  for(var i=0;i<ls.length;i++){var c=String(ls[i]).toLowerCase().slice(0,2);if(c==="sv"||c==="hu"||c==="en"||c==="sr")return c;if(c==="hr"||c==="bs"||c==="sh"||c==="me"||c==="cnr")return "sr";}
   return "en";
 }
 document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){var l=b.getAttribute("data-lang");setLang(l);try{localStorage.setItem("lang",l);}catch(e){}});});
