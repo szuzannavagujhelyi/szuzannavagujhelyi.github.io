@@ -294,9 +294,9 @@ m1:"Ur denna syntes föddes The Cricket's Violin Method (Tücsök-módszer): ett
 m2:"Två kompletterande utgåvor hör till metodboken. Arbetsboken översätter samma uppgifter till barnets eget språk och gör övandet hemma enklare och roligare. En separat notsamling innehåller enbart styckena från den första volymen, så att allt finns nära till hands.",
 m3:"Detta är bara första steget. Många fler idéer, lektioner och övningar väntar i den andra volymen.",
 b_eye:"Utgåvor",b_h:"Böcker och utgåvor",
-b1_t:"Metodbok för violinundervisning",b1_d:"Handboken för läraren: hållning, stråkfattning, vänster hand och tonbildning, steg för steg från den allra första lektionen.",
-b2_t:"Cricket's Practice Book – arbetsbok",b2_d:"Samma uppgifter på barnets eget språk: lekfulla sidor som gör övandet hemma enklare och roligare.",
-b3_t:"Cricket's Songbook – notsamling",b3_d:"Alla stycken från den första volymen i en samling, för violin och med pianoackompanjemang.",
+b1_t:"Metodik för violinundervisning",b1_d:"Handboken för läraren: hållning, stråkfattning, vänster hand och tonbildning, steg för steg från den allra första lektionen.",
+b2_t:"Syrsans övningsbok",b2_d:"Samma uppgifter på barnets eget språk: lekfulla sidor som gör övandet hemma enklare och roligare.",
+b3_t:"Syrsans notsamling",b3_d:"Alla stycken från den första volymen i en samling, för violin och med pianoackompanjemang.",
 fmt:"Digital utgåva · PDF",order:"Beställ",sample:"Gratis provsidor",orderSubj:"Beställning: ",
 c_eye:"Kontakt",c_h:"Hör av dig",c_p:"Är du intresserad av min metod eller vill du beställa någon av utgåvorna? Hör av dig på det sätt som passar dig bäst.",c_mail:"E-post",
 rights:"Alla rättigheter förbehållna.",title:"Szuzanna Vágujhelyi – Violinist",portrait:"Szuzanna Vágujhelyi med sin fiol"},
@@ -315,8 +315,8 @@ m2:"Uz metodsku knjigu idu još dva prateća izdanja. Radna sveska prenosi iste 
 m3:"Ovo je tek prvi korak. U drugom tomu čeka još mnogo ideja, lekcija i vežbi.",
 b_eye:"Izdanja",b_h:"Knjige i izdanja",
 b1_t:"Metodika nastave violine",b1_d:"Priručnik za nastavnike: držanje tela, držanje gudala, leva ruka i formiranje tona, korak po korak od prvog časa.",
-b2_t:"Cricket's Practice Book – radna sveska",b2_d:"Isti zadaci na jeziku deteta: razigrane stranice koje vežbanje kod kuće čine lakšim i radosnijim.",
-b3_t:"Cricket's Songbook – zbirka nota",b3_d:"Sve kompozicije iz prvog toma u jednoj zbirci, za violinu i sa klavirskom pratnjom.",
+b2_t:"Cvrčkova radna sveska",b2_d:"Isti zadaci na jeziku deteta: razigrane stranice koje vežbanje kod kuće čine lakšim i radosnijim.",
+b3_t:"Cvrčkova zbirka nota",b3_d:"Sve kompozicije iz prvog toma u jednoj zbirci, za violinu i sa klavirskom pratnjom.",
 fmt:"Digitalno izdanje · PDF",order:"Naručite",sample:"Besplatne probne stranice",orderSubj:"Porudžbina: ",
 c_eye:"Kontakt",c_h:"Javite mi se",c_p:"Ako vas zanima moja metoda ili želite da naručite neko od izdanja, javite mi se na način koji vam najviše odgovara.",c_mail:"E-pošta",
 rights:"Sva prava zadržana.",title:"Szuzanna Vágujhelyi – violinistkinja",portrait:"Szuzanna Vágujhelyi sa violinom"},
@@ -343,7 +343,8 @@ rights:"Minden jog fenntartva.",title:"Vágujhelyi Szuzanna – hegedűművész"
 };
 var SAMPLES={en:{method:"samples/Methodology-Sample-EN.pdf",workbook:"samples/Workbook-Sample-EN.pdf",songbook:"samples/Songbook-Sample-EN.pdf"},
 hu:{method:"samples/Modszertan-Bemutato-HU.pdf",workbook:"samples/Munkafuzet-Bemutato-HU.pdf",songbook:"samples/Kottatar-Bemutato-HU.pdf"}};
-SAMPLES.sv=SAMPLES.en;SAMPLES.sr=SAMPLES.en;
+SAMPLES.sv={method:"samples/Methodology-Sample-SV.pdf",workbook:"samples/Workbook-Sample-SV.pdf",songbook:"samples/Songbook-Sample-SV.pdf"};
+SAMPLES.sr={method:"samples/Methodology-Sample-SR.pdf",workbook:"samples/Workbook-Sample-SR.pdf",songbook:"samples/Songbook-Sample-SR.pdf"};
 var _E=[112,114,102,49,111,108,100,112,106,67,55,60,100,113,113,100,125,120,125,118];
 function em(){return _E.slice().reverse().map(function(c){return String.fromCharCode(c-3);}).join("");}
 function setLang(l){
@@ -353,7 +354,7 @@ function setLang(l){
   document.title=t.title;
   document.querySelectorAll("[data-i]").forEach(function(e){var k=e.getAttribute("data-i");if(t[k]!==undefined)e.innerHTML=t[k];});
   document.querySelectorAll("[data-sample]").forEach(function(e){e.href=SAMPLES[l][e.getAttribute("data-sample")];});
-  document.querySelectorAll("[data-cover]").forEach(function(e){e.src="img/cover-"+e.getAttribute("data-cover")+"-"+(l==="hu"?"hu":"en")+".png";e.alt=t["b"+({method:1,workbook:2,songbook:3})[e.getAttribute("data-cover")]+"_t"];});
+  document.querySelectorAll("[data-cover]").forEach(function(e){e.src="img/cover-"+e.getAttribute("data-cover")+"-"+l+".png";e.alt=t["b"+({method:1,workbook:2,songbook:3})[e.getAttribute("data-cover")]+"_t"];});
   document.querySelectorAll("[data-order]").forEach(function(e){e.href="mai"+"lto:"+em()+"?subject="+encodeURIComponent(t.orderSubj+t[e.getAttribute("data-order")].replace(/&amp;/g,"&"));});
   document.querySelectorAll("[data-price]").forEach(function(e){var p=e.getAttribute("data-price");e.textContent="€"+(l==="en"?p:p.replace(".",","));});
   document.querySelector(".portrait img").alt=t.portrait;
